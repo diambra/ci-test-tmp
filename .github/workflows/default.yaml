@@ -20,4 +20,4 @@ jobs:
     needs: tags-evaluator
     steps:
       - id: debug
-        run: echo ${{ jobs.tags-evaluator.outputs.tags }}
+        run: echo ${{ needs.tags-evaluator.outputs.tags }}
