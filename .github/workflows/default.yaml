@@ -17,6 +17,7 @@ jobs:
 
   build-and-push-evaluator:
     runs-on: ubuntu-latest
+    needs: tags-evaluator
     steps:
       - id: debug
-        run: echo ${{ steps.tags-evaluator.outputs.tags }}
+        run: echo ${{ jobs.tags-evaluator.outputs.tags }}
